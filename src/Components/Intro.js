@@ -10,38 +10,24 @@ const useStyles = makeStyles(() => ({
   section: {
     marginTop: '10px',
   },
-  introHeading: (theme) => ({
-    fontSize: '3rem',
-    fontWeight: '500',
-    color: theme.headline,
-  }),
-  paragraph:(theme) => ( {
-    fontSize: '1.5rem',
-    fontWeight: '200',
-    color: theme.paragraph,
-    marginTop:'20px'
-  }),
+
   inputIllustration: {
     maxHeight: '500px',
     maxWidth: '500px',
     marginLeft: 'auto',
-    marginRight:'auto',
-  }
+    marginRight: 'auto',
+  },
 }));
 
 function App() {
   const theme = useContext(ThemeContext);
   const classes = useStyles(theme);
   const illustrationSpringProps = useSpring({
-    from: { transform: 'scale(0,0)' },
+    from: { transform: 'scale(0.6,0.6)' },
     to: { transform: 'scale(1,1)' },
     config: config.default,
   });
-  const introSpringProps = useSpring({
-    from: { transform: 'scale(0,0)' },
-    to: { transform: 'scale(1,1)' },
-    config: config.default,
-  });
+
   const AnimatedGrid = animated(Grid);
 
   return (

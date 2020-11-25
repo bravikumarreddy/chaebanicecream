@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Grid, Typography, Button, Box } from '@material-ui/core';
 import { useSpring, animated, config } from 'react-spring';
 import { makeStyles } from '@material-ui/core/styles';
@@ -6,13 +6,10 @@ import { connect } from 'react-redux';
 import { hot } from 'react-hot-loader/root';
 import { useHistory } from 'react-router-dom';
 
-import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { ThemeContext } from '../App';
-import { Themes, defaultThemeName } from '../Components/Themes';
-import { updateDate, updateMessage, updateTheme } from '../redux';
-import Intro from '../Components/Intro';
 import OutputIllustration from '../Components/OutputIllustrtion';
+
 const useStyles = makeStyles(() => ({
   output: (theme) => ({
     backgroundColor: theme.secondary,
@@ -74,21 +71,18 @@ function Output(props) {
     month: 'long',
     day: 'numeric',
   };
-  
+
   const illustrationSpringProps = useSpring({
-    from: { transform: 'scale(0,0)' },
+    from: { transform: 'scale(0.6,0.6)' },
     to: { transform: 'scale(1,1)' },
     config: config.default,
   });
   const outputSpringProps = useSpring({
-    from: { transform: 'scale(0,0)' },
+    from: { transform: 'scale(0.6,0.6)' },
     to: { transform: 'scale(1,1)' },
     config: config.default,
   });
 
-  const handleMessageChange = (event) => {
-    props.updateMessage(event.target.value);
-  };
   const AnimatedGrid = animated(Grid);
 
   return (
@@ -98,7 +92,9 @@ function Output(props) {
         type="submit"
         color="primary"
         className={classes.goBack}
-        onClick={()=>{history.goBack()}}
+        onClick={() => {
+          history.goBack();
+        }}
       >
         back
       </Button>

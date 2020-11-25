@@ -1,7 +1,7 @@
 import React,{useContext} from 'react';
 import Logo from '../../assets/logo.png';
 import { useSpring, animated, config } from 'react-spring';
-import { Grid, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Box } from '@material-ui/core';
 import { hot } from 'react-hot-loader/root';
@@ -23,13 +23,13 @@ const useStyles = makeStyles((theme) => ({
   }),
 }));
 
-function Header(props) {
+function Header() {
   const theme = useContext(ThemeContext);
   const classes = useStyles(theme);
   const springProps = useSpring({
     from: { transform: 'translateY(-50%)' },
     to: { transform: 'translateY(0%)' },
-    config:config.default
+    config: config.default,
   });
   const AnimatedBox = animated(Box);
   return (

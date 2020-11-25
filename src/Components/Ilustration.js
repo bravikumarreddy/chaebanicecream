@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
 import { hot } from 'react-hot-loader/root';
-import { makeStyles } from '@material-ui/core/styles';
 import { ThemeContext } from '../App';
 
-function Ilustration(props) {
+function Ilustration() {
   const theme = useContext(ThemeContext);
 
   var mainColor = theme.main;
@@ -11,7 +10,7 @@ function Ilustration(props) {
   var stroke = theme.stroke;
   var highlight = theme.backgroundColor;
   var tertiary = theme.tertiary;
-  
+
   return (
     <svg
       width="100%"
