@@ -1,0 +1,3 @@
+export const UPDATE_DATE = 'UPDATE_DATE';
+export const UPDATE_THEME = 'UPDATE_THEME';
+export const UPDATE_MESSAGE = 'UPDATE_MESSAGE';
